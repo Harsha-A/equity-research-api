@@ -12,12 +12,7 @@ import pandas as pd
 
 def fetch_financial_data(ticker_symbol: str) -> dict:
     """Fetches comprehensive specific fundamental and market data using yfinance."""
-    session = requests.Session()
-    session.headers.update({
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-        "Accept": "application/json, text/plain, */*"
-    })
-    stock = yf.Ticker(ticker_symbol, session=session)
+    stock = yf.Ticker(ticker_symbol)
     
     # Get basic info
     try:
